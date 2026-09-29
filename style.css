@@ -1,0 +1,222 @@
+/* --- STREAMING_CHUNK:Styling custom orange theme variables and layout --- */
+:root {
+    --orange-primary: #ff7a00;
+    --orange-secondary: #ff9800;
+    --orange-dark: #e65100;
+    --orange-light: #fff3e0;
+    --orange-gradient: linear-gradient(135deg, #ff9800 0%, #ff5722 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff8f0 0%, #ffe0b2 100%);
+    color: #333333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    max-width: 1200px;
+}
+
+.navigacija ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navigacija a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navigacija a:hover, .navigacija a.aktivno {
+    color: var(--orange-primary);
+}
+
+/* --- STREAMING_CHUNK:Styling header typography in center --- */
+h1, h2, h3 {
+    font-family: 'Exo 2', sans-serif;
+    text-align: center;
+}
+
+#glavninaslov {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--orange-dark);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(255, 122, 0, 0.15);
+}
+
+#glavnipodnaslov {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 8px;
+}
+
+#ispodpodnaslov {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d84315;
+    background-color: var(--orange-light);
+    padding: 6px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 40px;
+    border: 1px solid #ffe0b2;
+}
+
+/* --- STREAMING_CHUNK:Styling cards container --- */
+.odabircontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.odabir {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(255, 122, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid #ffe0b2;
+}
+
+.odabir:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(255, 122, 0, 0.2);
+}
+
+.odabir img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.odabir .icon-box {
+    font-size: 3.5rem;
+    color: var(--orange-primary);
+    margin-bottom: 20px;
+}
+
+.odabir h3 {
+    font-size: 1.6rem;
+    color: #2d3748;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.vest-opis {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+/* --- STREAMING_CHUNK:Styling interactive buttons and dropdown contents --- */
+.dropdown-btn {
+    background: var(--orange-gradient);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
+}
+
+.dropdown-btn:hover {
+    opacity: 0.95;
+    transform: scale(1.02);
+}
+
+.dropdown-btn:active {
+    transform: scale(0.98);
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+    width: 100%;
+    margin-top: 0;
+}
+
+.dropdown-content.open {
+    max-height: 250px;
+    opacity: 1;
+    margin-top: 20px;
+    transition: max-height 0.4s ease-in, opacity 0.3s ease-in;
+}
+
+.dropdown-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.selected-result-item {
+    background-color: var(--orange-light);
+    border: 1px solid #ffcc80;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.selected-result-item .title {
+    font-weight: 700;
+    color: var(--orange-dark);
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+}
+
+.selected-result-item .desc {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+footer {
+    margin-top: auto;
+    color: #888;
+    font-size: 0.85rem;
+    padding: 20px;
+    text-align: center;
+}
